@@ -41,3 +41,23 @@ Body
     Route=/login => Login
     Route=/connections => Connections
     Route=/profile => Profile
+
+# Deployment
+
+- Signup on AWS
+- Launce Instance
+- chmod 400 <secret>.pem
+- Connected to the machine using this ssh command:
+- Install Node version 20.17.0
+- Git clone
+    - Frontend
+        - npm install: Install dependencies:
+        - npm run build
+        - sudo apt update
+        - sudo apt install nginx
+        - sudo systemctl start nginx
+        - sudo systemctl enable nginx
+        - Copy code from dist(build files) to /var/www/html
+        - sudo scp -r dist/* /var/www/html
+        - Enable port :80 of your instance
+        - Nginx provides a web server where we deploy our app.
