@@ -61,3 +61,34 @@ Body
         - sudo scp -r dist/* /var/www/html
         - Enable port :80 of your instance
         - Nginx provides a web server where we deploy our app.
+    - Backend
+        - Allowed ec2 instance public IP on mongodb server.
+        - npm install pm2 -g
+        - pm2 start npm --name "devTinder-backend" -- start
+        - pm2 logs
+        - pm2 list, pm2 flush <name>, pm2 stop <name>, pm2 delete <name>
+        - Update nginx config at this location: /etc/nginx/sites-available/default
+        - Restart nginx using command sudo systemctl restart nginx
+        - Modify the BASEURL in frontend project to /api
+ 
+ # Nginx Config
+    server {
+    listen 80;
+    server_name your-domain.com;
+
+    location / {
+        root /var/www/html;
+        index index.html;
+    }
+
+    location /api/ {
+        proxy_pass http://localhost:3000/;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+}
+
+
