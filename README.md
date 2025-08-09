@@ -36,11 +36,11 @@
 # Design of devTinder UI
 
 Body
-    NavBar  
-    Route=/ => Feed
-    Route=/login => Login
-    Route=/connections => Connections
-    Route=/profile => Profile
+NavBar  
+ Route=/ => Feed
+Route=/login => Login
+Route=/connections => Connections
+Route=/profile => Profile
 
 # Deployment
 
@@ -50,28 +50,29 @@ Body
 - Connected to the machine using this ssh command:
 - Install Node version 20.17.0
 - Git clone
-    - Frontend
-        - npm install: Install dependencies:
-        - npm run build
-        - sudo apt update
-        - sudo apt install nginx
-        - sudo systemctl start nginx
-        - sudo systemctl enable nginx
-        - Copy code from dist(build files) to /var/www/html
-        - sudo scp -r dist/* /var/www/html
-        - Enable port :80 of your instance
-        - Nginx provides a web server where we deploy our app.
-    - Backend
-        - Allowed ec2 instance public IP on mongodb server.
-        - npm install pm2 -g
-        - pm2 start npm --name "devTinder-backend" -- start
-        - pm2 logs
-        - pm2 list, pm2 flush <name>, pm2 stop <name>, pm2 delete <name>
-        - Update nginx config at this location: /etc/nginx/sites-available/default
-        - Restart nginx using command sudo systemctl restart nginx
-        - Modify the BASEURL in frontend project to /api
- 
- # Nginx Config
+  - Frontend
+    - npm install: Install dependencies:
+    - npm run build
+    - sudo apt update
+    - sudo apt install nginx
+    - sudo systemctl start nginx
+    - sudo systemctl enable nginx
+    - Copy code from dist(build files) to /var/www/html
+    - sudo scp -r dist/\* /var/www/html
+    - Enable port :80 of your instance
+    - Nginx provides a web server where we deploy our app.
+  - Backend
+    - Allowed ec2 instance public IP on mongodb server.
+    - npm install pm2 -g
+    - pm2 start npm --name "devTinder-backend" -- start
+    - pm2 logs
+    - pm2 list, pm2 flush <name>, pm2 stop <name>, pm2 delete <name>
+    - Update nginx config at this location: /etc/nginx/sites-available/default
+    - Restart nginx using command sudo systemctl restart nginx
+    - Modify the BASEURL in frontend project to /api
+
+# Nginx Config
+
     server {
     listen 80;
     server_name your-domain.com;
@@ -89,6 +90,32 @@ Body
         proxy_set_header Host $host;
         proxy_cache_bypass $http_upgrade;
     }
+
 }
 
+# Adding a custom domain name
 
+- purchased domain name from godaddy
+- signup on cloudfare and add a domain name.
+- change the nameservers on godaddy and point it to cloudflare
+- wait for sometime till your nameservers are updated ~15 minutes
+- DNS record: A devTinder.in IP Address
+- Enable SSL for website
+- DNS Registrar
+
+# Sending Emails via SES
+
+- Create a IAM User
+- Give access to AmazonSESFullAccess
+- Amazon SES: Create an Identity
+- Verify your domain name
+- Verify an email address identity
+- Request Production Access in Amazon SES. It will take 24 hrs. Until then you are in Sandbox environment where email sending is limited.
+- Install AWS SDK - v3
+- Code Example: https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/ses#code-examples
+- Setup SESClient
+- Access Credentials should be created in IAM under SecurityCredentials Tab
+- Add the credentials to the env file
+- Write code for SESClient
+- Write code for Sending Email Address
+- Make the email dynamic by passing more params to the run function
