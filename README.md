@@ -132,3 +132,5 @@ Route=/profile => Profile
 - Amazon SES Bulk Emails
 - Make sendEmail function dynamic
 - bee-queue and bull npm packages
+
+# Razorpay Payment Gateway Integration
