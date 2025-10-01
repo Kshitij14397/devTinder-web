@@ -19,19 +19,19 @@ const Footer = () => {
         <p>Copyright © {new Date().getFullYear()} - All right reserved</p>
       </aside>
       <nav className="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
-        <Link to="/privacy-policy" className="link link-hover">
+        <Link to="/pages/privacy-policy" className="link link-hover">
           Privacy Policy
         </Link>
-        <Link to="/terms-of-service" className="link link-hover">
+        <Link to="/pages/terms-of-service" className="link link-hover">
           Terms Of Service
         </Link>
-        <Link to="/refunds" className="link link-hover">
+        <Link to="/pages/refunds" className="link link-hover">
           Refund Policy
         </Link>
-        <Link to="/team" className="link link-hover">
+        <Link to="/pages/team" className="link link-hover">
           Team
         </Link>
-        <Link to="/contact-us" className="link link-hover">
+        <Link to="/pages/contact-us" className="link link-hover">
           Contact Us
         </Link>
       </nav>

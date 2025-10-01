@@ -134,3 +134,5 @@ Route=/profile => Profile
 - bee-queue and bull npm packages
 
 # Razorpay Payment Gateway Integration
+
+- Signup on Razorpay & complete KYC

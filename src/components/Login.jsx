@@ -35,11 +35,14 @@ const Login = () => {
 
   const handleSignup = async () => {
     try {
-    const res = await axios.post(BASE_URL + "/signup", {firstName, lastName, emailId, password}, {withCredentials: true});
-    dispatch(addUser(res?.data?.data));
-    navigate("/profile");
-    }
-    catch(err) {
+      const res = await axios.post(
+        BASE_URL + "/signup",
+        { firstName, lastName, emailId, password },
+        { withCredentials: true }
+      );
+      dispatch(addUser(res?.data?.data));
+      navigate("/profile");
+    } catch (err) {
       setError(err?.response?.data);
       console.error(err);
     }
@@ -87,7 +90,7 @@ const Login = () => {
             <fieldset className="fieldset">
               <legend className="fieldset-legend">Password</legend>
               <input
-                type="text"
+                type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 className="input"
@@ -96,7 +99,10 @@ const Login = () => {
             </fieldset>
           </div>
           <div className="card-actions justify-center flex flex-col items-center">
-            <button className="btn btn-primary" onClick={isLoginForm ? handleLogin : handleSignup}>
+            <button
+              className="btn btn-primary"
+              onClick={isLoginForm ? handleLogin : handleSignup}
+            >
               {isLoginForm ? "Login" : "Signup"}
             </button>
             <p
