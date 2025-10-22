@@ -34,6 +34,9 @@ const Footer = () => {
         <Link to="/pages/contact-us" className="link link-hover">
           Contact Us
         </Link>
+        <Link to="/pages/shipping" className="link link-hover">
+          Shipping
+        </Link>
       </nav>
     </footer>
   );

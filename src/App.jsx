@@ -12,6 +12,7 @@ import TermsOfService from "./components/TermsOfService";
 import Refunds from "./components/Refunds";
 import Team from "./components/Team";
 import ContactUs from "./components/ContactUs";
+import Shipping from "./components/Shipping";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
               <Route path="refunds" element={<Refunds />} />
               <Route path="team" element={<Team />} />
               <Route path="contact-us" element={<ContactUs />} />
+              <Route path="shipping" element={<Shipping />} />
             </Route>
           </Route>
         </Routes>
