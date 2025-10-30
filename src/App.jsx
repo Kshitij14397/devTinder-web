@@ -13,6 +13,7 @@ import Refunds from "./components/Refunds";
 import Team from "./components/Team";
 import ContactUs from "./components/ContactUs";
 import Shipping from "./components/Shipping";
+import Premium from "./components/Premium";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             <Route path="connections" element={<Connections />} />
             <Route path="requests" element={<Requests />} />
             <Route path="profile" element={<Profile />} />
+            <Route path="premium" element={<Premium />} />
             <Route path="pages">
               <Route path="privacy-policy" element={<PrivacyPolicy />} />
               <Route path="terms-of-service" element={<TermsOfService />} />

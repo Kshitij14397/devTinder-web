@@ -136,3 +136,12 @@ Route=/profile => Profile
 # Razorpay Payment Gateway Integration
 
 - Signup on Razorpay & complete KYC
+- Created a UI for premium page
+- Creating an API for create order in backend
+- Added my key and secret in env file
+- Initialized Razorpay in utils
+- Creating order on Razorpay
+- Create Schema and model
+- Saved the order in payments collection
+- make the API dynamic
+- Setup Razorpay webhook on your live API
