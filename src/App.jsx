@@ -14,6 +14,7 @@ import Team from "./components/Team";
 import ContactUs from "./components/ContactUs";
 import Shipping from "./components/Shipping";
 import Premium from "./components/Premium";
+import Chat from "./components/Chat";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
               <Route path="contact-us" element={<ContactUs />} />
               <Route path="shipping" element={<Shipping />} />
             </Route>
+            <Route path="chat/:targetUserId" element={<Chat />} />
           </Route>
         </Routes>
       </BrowserRouter>

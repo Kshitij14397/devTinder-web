@@ -145,3 +145,9 @@ Route=/profile => Profile
 - Saved the order in payments collection
 - make the API dynamic
 - Setup Razorpay webhook on your live API
+
+# Real Time Chat using Websocket(socket.io)
+
+- Build the UI for a chat window on /chat/:targetUserId
+- Setup socket.io in backend
+- npm i socket.io
