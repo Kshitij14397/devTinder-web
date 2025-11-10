@@ -151,3 +151,14 @@ Route=/profile => Profile
 - Build the UI for a chat window on /chat/:targetUserId
 - Setup socket.io in backend
 - npm i socket.io
+- Setup frontend socket.io-client
+- Initialize the chat
+- createSocketConnection
+- Listen to events
+- Homework: Improve the UI
+- Homework: Fix security bug - auth in web sockets
+- Homework: Fix bug - If I'm not friend, then I should not be able to send message
+- Homework: feat: Show Green Symbol when online?? - [last Seen 2 hours ago]
+- Homework: Limit messages when fetching from DB
+- Project Ideas: Tic Tac Toe Game
+- Project Ideas: Chess
